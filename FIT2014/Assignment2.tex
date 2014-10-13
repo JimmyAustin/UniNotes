@@ -1,0 +1,33 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+\title{Assignment 2 - FIT2014}
+\author{James Austin}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+
+\section{Problem 0 - A}
+Base Case: The problem works when N = 2, as $P_2 = 2$, as given in the problem description\\
+$P_2 = Q_1*P_{2-1}+Q_2*P_{2-2}$\\
+$P_2 = 1 * 1 + 1*1$\\
+$P_2 = 1 + 1$\\
+$P_2 = 2$\\
+Now we solve for $P_{n+1}$\\
+$P_{n+1} = \sum\limits_{i=1}^{n} Q_iP_{n-1}+Q_{n+1}P_{(n+1)-(n+1)}$\\
+$P_{n+1} = \sum\limits_{i=1}^{n} Q_iP_{n-1}+Q_{n+1}P_{0}$\\
+$P_{n+1} = \sum\limits_{i=1}^{n} Q_iP_{n-1}+P_n$\\
+$P_{n+1} = 2 \sum\limits_{i=1}^{n} Q_iP_{n-1}$
+
+No idea what to do now.\footnote{Morituri te salutant.}
+
+\end{document}  

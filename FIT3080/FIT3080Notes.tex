@@ -1,0 +1,129 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+\title{Brief Article}
+\author{The Author}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Lecture 1: Introduction to Artificial Intelligence}
+
+\subsection{What is Intelligence?}
+
+Something is intelligent if it can communicate, it has internal knowledge, it has world knowledge, it has intentions and plans to fulfil these intentions and it has creativity. AI is the study of mental faculties through the use of computational models. The goals of AI practitioners is to find out about the nature of intelligence and to build an intelligent machine, that is, to build a machine that thinks like a human (thinks rationally) and acts like a human (acts rationally).
+\\\\
+In 1950, Turing suggested that the major components of AI are knowledge, reasoning, language understanding and learning. 
+
+\subsection{Rational Behaviour}
+Rational Behaviour is doing the right thing, that which is expected to maximise goal achievement, given the available information.
+
+\subsection{Rational Agents}
+A agent is an entity that perceives and acts. In abstract form, an agent is a function that maps percept histories to actions: $f: P \rightarrow A$. For any given class of environments and tasks, we seek the agent (or class of agents) with the best performance. There is a caveat though. Computational limitations make perfect rationality unachievable. Therefore we must design the best program for a given machine's resources.
+\subsection{Autonomous Agency}
+Autonomy is the ability to operate independently, while agency is a internal goal structure and external behaviour which generally serves to satisfy a goal structure. The requirements of autonomous agency are:
+\begin{itemize}
+\item Pragmatics
+\item Generalisation and specialisation
+\item Incremental learning
+\item Goal-driven learning
+\item Defeasibility - open in principle to revision, valid objection, forfeiture, or annulment.
+\item Uncertainty
+\end{itemize}
+
+\section{Lecture 2: Intelligent Agents}
+
+\subsection{Agents}
+
+An agent is anything that can be viewed as perceiving its environment through sensors and acting upon the environment through actuators. For a human agent, sensors would be our eyes or ears, while our actuators would be our hands, legs, mouth and other body parts. For a robot they would be cameras and motors, respectively.
+
+\\
+An agent function maps from percept histories to actions: $f: P \rightarrow A$\\
+The agent program runs on the physical architecture to produce this function.\\
+The agent itself is a combination of the architecture and the program.\\
+
+\subsection{Rationality and Rational Agents}
+
+Rationality depends on a performance measure, the agent's prior knowledge of the environment, the actions that the agent can perform and the percept sequence to data. The formal definition is: 
+
+\begin{verbatim}
+For each possible percept sequence, a tonal agent should select an action
+that is expected to maximise its performance measure, given the evidence
+provided by the percept sequence and the agent's built-in knowledge.
+\end{verbatim}
+The agent is considered autonomous if its behaviour is determined by its own experience. 
+
+\subsection{Task Environment}
+
+To design a rational argument, you have to specify a task environment. This is made by PEAS:
+\begin{itemize}
+\item Performance Measure
+\item Environment
+\item Actuators
+\item Sensors
+\end{itemize}
+
+\subsubsection{Example - Automated Taxi Driver}
+\begin{itemize}
+\item Performance Measure - Safe, fast, legal, comfortable trip, minimise fuel consumption, maximise profits.
+\item Environment - Road types, road contents, customers, operating conditions.
+\item Actuators - Control over the car, communication with other vehicles and passengers.
+\item Sensors - Cameras, sonar, speedometer, GPS, odometer, engine sensors, speech recognizer.
+\end{itemize}
+
+\subsubsection{Example - Internet Shopping Agent}
+\begin{itemize}
+\item Performance Measure - Cheap, good quality, appropriate product.
+\item Environment - Current WWW sites, vendors.
+\item Actuators - Display to user, follow URL, fill in form.
+\item Sensors - HTML pages (text, graphics, scripts)
+\end{itemize}
+
+\subsection{Environment Types}
+The environment type largely determines the agent design.
+\begin{itemize}
+\item Fully observable vs Partially obserable- An agent's sensors give it access to the complete state of the environment at all times.
+\item Known vs Unknown - An agent knows the "laws" of the environment.
+\item Single vs Multi Agent - An agent operating by itself in an argument
+\item Deterministic vs Stochastic - The next state is completely determined by the current state and the action executed by the agent.
+\item Episodic vs Sequential - The agent's experience is divided into atomic episodes. The next episode does not depend on previous actions. In each episode the agent precepts a percept and performs a single action.
+\item Static vs Dynamic - The agent is unchanged while an agent is deliberating.
+\item Discrete vs Continuous) - Pertains to number of states, the way time is handled, and number of percepts and actions. E.G, state may be continuous, but actions may be discrete.
+\end{itemize}
+\subsection{Agent Types}
+The agent type is based on how actions are selected.
+\begin{itemize}
+\item Simple reflex - current percept
+\item Model based - + internal state
+\item Goal based - + goal
+\item Utility based - + utility function
+\item Learning
+\end{itemize}
+
+\subsection{How components of agent programs work?}
+Depends on the representations of states:
+\begin{itemize}
+\item Atomic - each state is indivisible (Search game playing, Markov Decision Processes)
+\item Factored - splits each state into attributes, each of which has a value (Propositional logic, Planning, Bayesian Networks, Machine Learning).
+\item Structured - represents how things are related to each other (First order logic, Bayesian networks, Semantic networks).
+\end{itemize}
+
+\section{Lecture 3-4: Problem Solving As Search - ONGOING}
+
+\section{Lecture 8: Knowledge Representation - INCOMPLETE}
+\section{Lecture 11: Probability - INCOMPLETE}
+\section{Lecture 12: Bayesian Networks - INCOMPLETE}
+\section{Lecture 13-14: Bayesian Networks II - INCOMPLETE}
+\section{Lecture 15-16: MDPs - INCOMPLETE}
+\section{Lecture 17-18: RL - INCOMPLETE}
+\section{Lecture 19-20:Mathematical Principles of ML - Decision Trees - INCOMPLETE}
+\section{Lectures 21-22: Supervised Learning - INCOMPLETE}
+
+\end{document}  

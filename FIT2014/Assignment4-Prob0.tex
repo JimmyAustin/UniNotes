@@ -1,0 +1,37 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+
+\title{Problem 0 - Assignment 4}
+\author{James Austin}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\section{Part A}
+If L is an undecidable language, and S is any string, then $L \cup \{S\}$ is also undecidable. This is because any algorithm that computes $L \cup \{S\}$ includes the algorithm that computes the language $L$. As the algorithm for $L$ does not exist (as the language is undecidable), this means the algorithm that computes $L \cup \{S\}$ also doesn't exist, and hence the language is undecidable.
+\section{Part B}
+For a base case, we will use $k = 0$.
+\\
+$L^{(0)} = L \cup \{\}$
+\\
+$L^{(0)} = L$
+
+As L is undecidable, this means that $L^{(0)}$ is also undecidable.
+
+For the induction step, we use $k = k+1$\\
+$L^{(k+1)} = L \cup {s_1,s_2,s_3,...,s_k} \cup {s_k+1}$\\
+As we have shown in Part A, any language that includes a undecidable language in it's definition will also be undecidable. As $L^{(k+1)}$ includes $L$, $L^{(k+1)}$ is also undecidable for all K.
+
+\section{Part C}
+
+The language $L$ is undecidable because there is no algorithm for generating it. There is however an algorithm for generating the set of all strings. The fact that L is a subset of the set of all strings has nothing to do with the algorithm used for generating it.
+
+
+
+\end{document}  
