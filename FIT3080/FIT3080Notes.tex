@@ -43,7 +43,6 @@ Autonomy is the ability to operate independently, while agency is a internal goa
 \subsection{Agents}
 
 An agent is anything that can be viewed as perceiving its environment through sensors and acting upon the environment through actuators. For a human agent, sensors would be our eyes or ears, while our actuators would be our hands, legs, mouth and other body parts. For a robot they would be cameras and motors, respectively.
-
 \\
 An agent function maps from percept histories to actions: $f: P \rightarrow A$\\
 The agent program runs on the physical architecture to produce this function.\\
@@ -115,7 +114,157 @@ Depends on the representations of states:
 \item Structured - represents how things are related to each other (First order logic, Bayesian networks, Semantic networks).
 \end{itemize}
 
-\section{Lecture 3-4: Problem Solving As Search - ONGOING}
+\section{Lecture 3-7: Problem Solving As Search - ONGOING}
+
+The objectives for problem solving include:
+\begin{itemize}
+\item Problem formulation
+\item Control strategies
+\begin{itemize}
+\item Tentative
+\begin{itemize}
+\item Uninformed
+\begin{itemize}
+\item Backtrack
+\item Tree and Graph Search
+\end{itemize}
+\item Informed
+\begin{itemize}
+\item Best-first (greedy) search
+\item A
+\item A*
+\end{itemize}
+\end{itemize}
+\item Irrevocable
+\begin{itemize}
+\item Informed
+\begin{itemize}
+\item Hill climbing
+\item Greedy search
+\item Local beam search
+\item Simulated annealing
+\item Genetic algorithms
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+\item Adversarial search
+\begin{itemize}
+\item Optimal decisions
+\item $\alpha - \beta$ pruning
+\item Imperfect, real-time decisions
+\end{itemize}
+\end{itemize}
+\subsection{A problem-solving agent}
+\begin{verbatim}
+Function Simple-Problem-Solving-Agent(percept) 
+returns seq
+persistent: seq - action sequence, initially null 
+state - description of current world stategoal - a goal, initially nullproblem - a problem formulation 
+
+state <- UpdateState(state,percept)goal <- FormulateGoal(state)problem <- FormulateProblem(state,goal) 
+seq <- Search(problem)return seq
+\end{verbatim}
+\subsubsection{Example - Romania}
+The problem is: On holiday in romania; currently in Arad. Flight leaves tomorrow from Bucharest.
+The formualate goal is to be in Bucharest, and the problem includes the states (various cities) and actions (driving between these cities). The way to find the solution is to find the sequence of cities that you can cross between.
+\subsection{Problem Formulation}
+The basic constituents of problem formulation are the states, goals, actions and constraints.\\
+The state space is the set of all states reachable from the initial state by any sequence of actions. The path in the state space is any sequence of actions leading from one state to another. 
+\\
+To represent a problem you need
+\begin{itemize}
+\item An initial state
+\item Operators (actions) and a transition model
+\item Constraints
+\item A goal test
+\item A path cost function
+\end{itemize}
+
+For the romainian example given above, this would correspond to:
+\begin{itemize}
+\item An initial state - "at Arad"
+\item Operators (actions) {Go(Sibiu, Go(Timisoara),..} and a transition model (Result(In(Arad),Go(Zerind))->In(Zerind)
+\item Constraints - None
+\item A goal test - In(Bucharest)
+\item A path cost function - The sum of all distances, or the number of actions executed.
+\end{itemize}
+
+For an algorithm that governs the assembly of an object using a robot, they might be
+\begin{itemize}
+\item States - Real valued coordinates of robot joint angles
+\item Actions - Motions by the robot
+\item Constraints - Arm cannot fully rotate in certain angles
+\item Goal test - Complete assembly
+\item Path cost - time to execute
+\end{itemize}
+\subsection{Selecting a State Space}
+
+The real world is complex. This means that the state space must be abstracted for problem solving. An abstract state may equal a set of real states (being In(Zerind) might mean you are in one of a few different hotels in Zerind). In this way, an abstract action can be a complex combination of real actions. A trip from one city to another represents many individual actions. A abstract solution is a solution that can be expanded into a set of paths in the real world. Each abstract action should be easier to perform than solving the original problem.
+
+\subsection{Control Strategies}
+Control strategies can be separated by two defining characteristics, there tentativeness (irrevocable/tentative) and informedness (uninformed/informed).
+
+\subsection{Tentative Control Strategies}
+\subsubsection{Backtracking}
+In backtracking we keep one path at a time only. If we fail, we go back to the last decision point and erase the failed path. Backtracking occurs when we generate a previously encountered state description, we pass an arbitrary number of rules without reaching our goal, or there are no more applicable rules.
+\subsubsection{Graph Search}
+We keep track of several paths simultaneously. This is done using a structure called a search tree/graph. A graph is a set of nodes, while arcs connect certain pairs of nodes (in a directed graph these arcs are one way). If a node $n_i$ is accessible from $n_k$, then there is a path between the two nodes. If you expand a node, you are finding all of its children. 
+\\
+Using a search tree, the root is the initial state, while it's children are the nodes accessible from it. Leaves are states without visible successor. At each iteration, pick a leaf node and expand it.
+\subsection{Search Strategies}
+A search strategy is defined by picking the order of node expansion. These strategies are evaluated along several dimensions.
+\begin{itemize}
+\item Completeness: Does it always find a solution if one exists?
+\item Time complexity: Number of nodes generated
+\item Space complexity: Maximum number of nodes in memory
+\item Optimality: Does it always find a least-cost solution.
+\end{itemize}
+
+Time and space complexity are measured in terms of:
+\begin{itemize}
+\item b: maximum branching factor of the search tree
+\item d: depth of the least-cost solution
+\item m: maximum depth of any path in the state space (may be infinite)
+\end{itemize}
+
+\subsection{Uninformed search strategies}
+These search strategies use only the information available in the problem definition
+\subsubsection{Breadth-first search (BFS)}
+Expand the shallowest unexpanded node. Uses a large amount of space.
+\begin{itemize}
+\item Implementation: FIFO queue. Put successors at the end of the queue.
+\item Complete: Yes (if b is finite)
+\item Time: $O(b^d)$
+\item Space: $O(b^d)$ (keeps every node in memory) 
+\item Optimal: Yes (if all actions have the same cost)
+\end{itemize}
+
+\subsubsection{Uniform-cost search (UFS)}
+Expand the least-cost unexpanded node.
+\begin{itemize}
+\item Implementation: insert in order of increasing path cost.(The same as BFS if all steps cost equal).
+\item Complete: Yes, if all steps cost >= 0
+\item Time: $O(b_{1+floor(C*0)})$, C is the cost of the optimal solution.
+\item Space: $O(b_{1+floor(C*0)})$
+\item Optimal: Yes - nodes expanded in increasing order of g(n) = cost of path to node n
+\end{itemize}
+
+\subsubsection{Depth-first search}
+Expand deepest unexpanded node
+\begin{itemize}
+\item Implementation - LIFO - insert successors in front of queue.
+\item Complete - Infinite-state spaces: No, Finite-state spaces: Yes
+\item Time - $O(b^m)$, terrible if m is much larger than d
+\item Space - $O(bm)$
+\item Optimal - No
+\subsubsection{Iterative Deepening Search}
+Check all nodes of D=0, then D=1, then D=2.
+\begin{itemize}
+\item Complete: Yes
+\item Time: $O(b^d)$
+
+
 
 \section{Lecture 8: Knowledge Representation - INCOMPLETE}
 \section{Lecture 11: Probability - INCOMPLETE}
