@@ -1,35 +1,52 @@
 \contentsline {section}{\numberline {1}Lecture 1: Introduction to Artificial Intelligence}{2}
 \contentsline {subsection}{\numberline {1.1}What is Intelligence?}{2}
-\contentsline {subsection}{\numberline {1.2}Rational Behaviour}{2}
-\contentsline {subsection}{\numberline {1.3}Rational Agents}{2}
+\contentsline {subsection}{\numberline {1.2}Rational Behaviour}{3}
+\contentsline {subsection}{\numberline {1.3}Rational Agents}{3}
 \contentsline {subsection}{\numberline {1.4}Autonomous Agency}{3}
 \contentsline {section}{\numberline {2}Lecture 2: Intelligent Agents}{3}
 \contentsline {subsection}{\numberline {2.1}Agents}{3}
-\contentsline {subsection}{\numberline {2.2}Rationality and Rational Agents}{3}
+\contentsline {subsection}{\numberline {2.2}Rationality and Rational Agents}{4}
 \contentsline {subsection}{\numberline {2.3}Task Environment}{4}
 \contentsline {subsubsection}{\numberline {2.3.1}Example - Automated Taxi Driver}{4}
-\contentsline {subsubsection}{\numberline {2.3.2}Example - Internet Shopping Agent}{4}
-\contentsline {subsection}{\numberline {2.4}Environment Types}{4}
+\contentsline {subsubsection}{\numberline {2.3.2}Example - Internet Shopping Agent}{5}
+\contentsline {subsection}{\numberline {2.4}Environment Types}{5}
 \contentsline {subsection}{\numberline {2.5}Agent Types}{5}
-\contentsline {subsection}{\numberline {2.6}How components of agent programs work?}{5}
-\contentsline {section}{\numberline {3}Lecture 3-7: Problem Solving As Search - ONGOING}{5}
-\contentsline {subsection}{\numberline {3.1}A problem-solving agent}{6}
-\contentsline {subsubsection}{\numberline {3.1.1}Example - Romania}{6}
+\contentsline {subsection}{\numberline {2.6}How components of agent programs work?}{6}
+\contentsline {section}{\numberline {3}Lecture 3-7: Problem Solving As Search - ONGOING}{6}
+\contentsline {subsection}{\numberline {3.1}A problem-solving agent}{7}
+\contentsline {subsubsection}{\numberline {3.1.1}Example - Romania}{7}
 \contentsline {subsection}{\numberline {3.2}Problem Formulation}{7}
 \contentsline {subsection}{\numberline {3.3}Selecting a State Space}{8}
 \contentsline {subsection}{\numberline {3.4}Control Strategies}{8}
 \contentsline {subsection}{\numberline {3.5}Tentative Control Strategies}{8}
 \contentsline {subsubsection}{\numberline {3.5.1}Backtracking}{8}
-\contentsline {subsubsection}{\numberline {3.5.2}Graph Search}{8}
-\contentsline {subsection}{\numberline {3.6}Search Strategies}{8}
+\contentsline {subsubsection}{\numberline {3.5.2}Graph Search}{9}
+\contentsline {subsection}{\numberline {3.6}Search Strategies}{9}
 \contentsline {subsection}{\numberline {3.7}Uninformed search strategies}{9}
 \contentsline {subsubsection}{\numberline {3.7.1}Breadth-first search (BFS)}{9}
 \contentsline {subsubsection}{\numberline {3.7.2}Uniform-cost search (UFS)}{10}
-\contentsline {section}{\numberline {4}Lecture 8: Knowledge Representation - INCOMPLETE}{10}
-\contentsline {section}{\numberline {5}Lecture 11: Probability - INCOMPLETE}{10}
-\contentsline {section}{\numberline {6}Lecture 12: Bayesian Networks - INCOMPLETE}{10}
-\contentsline {section}{\numberline {7}Lecture 13-14: Bayesian Networks II - INCOMPLETE}{10}
-\contentsline {section}{\numberline {8}Lecture 15-16: MDPs - INCOMPLETE}{10}
-\contentsline {section}{\numberline {9}Lecture 17-18: RL - INCOMPLETE}{10}
-\contentsline {section}{\numberline {10}Lecture 19-20:Mathematical Principles of ML - Decision Trees - INCOMPLETE}{10}
-\contentsline {section}{\numberline {11}Lectures 21-22: Supervised Learning - INCOMPLETE}{10}
+\contentsline {subsubsection}{\numberline {3.7.3}Depth-first search}{10}
+\contentsline {subsubsection}{\numberline {3.7.4}Iterative Deepening Search}{10}
+\contentsline {subsection}{\numberline {3.8}Informed Search Strategies: Best-first Search}{10}
+\contentsline {subsubsection}{\numberline {3.8.1}Definitions}{11}
+\contentsline {subsection}{\numberline {3.9}Greedy Best-First Search}{11}
+\contentsline {subsection}{\numberline {3.10}A}{11}
+\contentsline {subsection}{\numberline {3.11}A*}{12}
+\contentsline {subsection}{\numberline {3.12}Problems}{12}
+\contentsline {subsection}{\numberline {3.13}Irrevocable Search Algorithms}{12}
+\contentsline {subsection}{\numberline {3.14}Hill Climbing}{12}
+\contentsline {subsection}{\numberline {3.15}Local Beam Search}{12}
+\contentsline {subsection}{\numberline {3.16}Simulated Annealing}{12}
+\contentsline {subsection}{\numberline {3.17}Genetic Algorithms}{13}
+\contentsline {subsection}{\numberline {3.18}Adversarial Search Algorithms}{13}
+\contentsline {subsubsection}{\numberline {3.18.1}MinMax Ideas}{13}
+\contentsline {subsection}{\numberline {3.19}Resource Limits}{13}
+\contentsline {subsection}{\numberline {3.20}$\alpha - \beta $ Procedure}{13}
+\contentsline {section}{\numberline {4}Lecture 8: Knowledge Representation - INCOMPLETE}{14}
+\contentsline {section}{\numberline {5}Lecture 11: Probability - INCOMPLETE}{14}
+\contentsline {section}{\numberline {6}Lecture 12: Bayesian Networks - INCOMPLETE}{14}
+\contentsline {section}{\numberline {7}Lecture 13-14: Bayesian Networks II - INCOMPLETE}{14}
+\contentsline {section}{\numberline {8}Lecture 15-16: MDPs - INCOMPLETE}{14}
+\contentsline {section}{\numberline {9}Lecture 17-18: RL - INCOMPLETE}{14}
+\contentsline {section}{\numberline {10}Lecture 19-20:Mathematical Principles of ML - Decision Trees - INCOMPLETE}{14}
+\contentsline {section}{\numberline {11}Lectures 21-22: Supervised Learning - INCOMPLETE}{14}
